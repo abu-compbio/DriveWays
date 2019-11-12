@@ -16,10 +16,10 @@ pip install -r requirements.txt
 The file is located at data/intAct_PPI.txt
 
 ```
-$g_i$ $g_j$ confidence value
-MDM2  TP53	0.99
-APP	APP	0.99
-MYC	MAX	0.98
+gene1 gene2 confidence value
+MDM2  TP53  0.99
+APP APP 0.99
+MYC MAX 0.98
 ...
 ```
 Note: these network contains the edges with confidence value > 0.35
@@ -55,15 +55,15 @@ the following script should be run first
 cd src/seed_generation/
 python generate_seed_file.py
 ```
-Modify the appropriate parameters in the script to change the network file,
-the mutation data file, and the output file
+Modify the appropriate parameters in the script to change the network,
+the mutation data, and the output files path
 
 ## **Run**
 
-To run OLDRIM on the given input file, run the following script
+To run OLDRIM on the given input files:
 
 ```
 cd src
 python oldrim.py
 ```
-`src/config.py` contains different parameters for the paths and the functions used for scoring
+`src/config.py` contains different parameters for the inout files path and the functions used for scoring
