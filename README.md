@@ -22,7 +22,7 @@ APP APP 0.99
 MYC MAX 0.98
 ...
 ```
-Note: these network contains the edges with confidence value > 0.35
+Note: this network contains the edges with confidence value > 0.35
 
 2. Mutation data
 The file contains the list of mutated genes. Each line consists of a gene and the list of patients where that gene is mutated
