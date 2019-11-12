@@ -65,7 +65,9 @@ class MexCov():
 
 if __name__ == '__main__':
     from graph import graph
-    g = graph('hintedge_new.txt')
-    m = MexCov('gene_patient.txt', g)
+    PPI_file = '../../data/intAct_PPI.txt'
+    mutation_data_file = '../../data/gene_patients.txt'
+    g = graph(PPI_file)
+    m = MexCov(mutation_data_file, g)
 
     m.summary()

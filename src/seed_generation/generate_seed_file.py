@@ -50,12 +50,9 @@ class SeedGenerater():
 
 
 if __name__ == '__main__':
-    generator = SeedGenerater('../../data/intActedge_threshold_35_BRCA.txt', '../../data/gene_patient_BRCA.txt', '\t')
+    PPI_file = '../../data/intAct_PPI.txt'
+    mutation_data_file = '../../data/gene_patients.txt'
+    output_file = '../../data/intAct_seeds.txt'
+    generator = SeedGenerater(PPI_file,mutation_data_file , '\t')
     seeds = generator.seeds
-    print(seeds)
-    generator.write_seeds('intAct_seeds_BRCA.txt')
-    # randomized_lists = generator.random_sort(100)
-    # for i in range(100):
-    #     with open(f'../../data/random_seeds/intAct_seeds_threshold_35_{i}.txt', 'w') as f:
-    #         for s in randomized_lists[i]:
-    #             f.write(s+'\n')
+    generator.write_seeds(output_file)

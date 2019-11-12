@@ -1,6 +1,6 @@
-# This is a class that contains the conidtion for considering a node (gene) for adding or removing
+# This is the class that contains the condition for considering a node (gene) for adding or removing
 # it has a function condition returns True or False
-# it has a set_condition finction
+# it has a set_condition function
 from .functions import *
 import numpy as np
 

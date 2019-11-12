@@ -13,6 +13,7 @@ class Module():
         '''
         self._genes = []
         self._seed = None
+
         if isinstance(seed, list):
             # This condition appeared when we call copy function on an instance of this class
             self._genes = seed
@@ -36,7 +37,6 @@ class Module():
     def _cov(self,module = None):
         if not isinstance(module, Module):
             raise 'Module should be of instance module'
-        # print('module.genes: ',module.genes)
         return self.cov_mutex.getcov(module.genes)
 
     @property
@@ -85,7 +85,7 @@ class Module():
         else:
             raise Exception('genes should be either of type str or list')
         return self
-        
+
     def remove_gene(self,genes):
         l = len(self.genes)
         if isinstance(genes, str):
@@ -106,8 +106,11 @@ class Module():
 
 
 if __name__ == '__main__':
-    covmex_ = CovMex('../data/gene_patient.txt')
+    mutation_data_file = '../data/gene_patients.txt'
+    covmex_ = CovMex(mutation_data_file)
     covmex_.summary()
+
+    # A toy example to check the functionalties of Module class
     m = Module(covmex_)
     m.add_gene('geneA')
     m.add_gene(['geneB','geneC'])

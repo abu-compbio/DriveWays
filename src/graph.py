@@ -13,15 +13,14 @@ class Graph():
     def construct_graph(self):
         self.G= nx.Graph()
         self.num_edges = 0
-        # mutexs= []
+
         with open(self.rawgraph, 'r') as f:
             edges = f.readlines()
             edges = [tuple(s.strip().split('\t')[:2]) for s in edges]
-            # mutexs = [covmex.getmutex(list(edge)) for edge in edges]
-            # print(edges[:3])
+
             self.G.add_edges_from(edges)
         self.G = self.G.to_undirected()
-        # return mutexs,edges
+
 
     @property
     def size(self):
@@ -70,36 +69,9 @@ class Graph():
 
 
 if __name__ == '__main__':
-    # print('nx version: ', nx.__version__)
+
     import numpy as np
     from scipy import stats
-    G = Graph('../data/intActedge_threshold_35.txt')
-
-
-    # m = CovMex('../data/gene_patient_update.txt')
-    # mutexs, edges = G.construct_graph(m)
-    # mutexs, edges = np.array(mutexs), np.array(edges)
-    # print(stats.describe(mutexs))
-    # print('Qunatiles: \n', np.quantile(mutexs, q=[0.05,0.1,0.2,0.25]))
-    # print('edges mutex < 0.9: \n', len(mutexs[mutexs<0.95]))
-    # s_edges = edges[mutexs<0.95]
-    # print(s_edges)
-    # tp53 = [1 for e in s_edges if e[0] == 'TP53' or e[1] == 'TP53']
-    # print('TP53s: ', sum(tp53))
-
-    # nodes = G.getNodes()
-    # edges = G.getEdges(None)
+    PPI_file = '../data/intAct_PPI.txt'
+    G = Graph(PPI_file)
     G.summary()
-    # b = bn.node_boundary(G.G, nodes[:2])
-    # print(b)
-    # print(G.getAdj(nodes[0]))
-    # print(G.getAdj(nodes[:5]))
-    # print('Adj of {}: {}'.format(nodes[0], G.getAdj(nodes[0])))
-    # print('Adj of {}: {}'.format(nodes[1], G.getAdj(nodes[1])))
-    # print('Adj of {}: {}'.format(nodes[:2], G.getAdj(nodes[:2])))
-
-    # a= ['COL4A2', 'HDLBP', 'BAG6', 'PSG3', 'TBX4', 'ATXN1', 'EGLN2', 'SPINT1', 'KEAP1', 'NR2F1', 'NR2F2', 'ZFYVE9', 'BCCIP', 'HTRA1']
-    # c = ['UBE2E1', 'UBE2D4', 'UBE2D2', 'UBE2D3', 'UBE2E3', 'UBE2D1', 'AR', 'DACH1', 'UBE2V1', 'UBE2E2', 'UBE2U', 'UBE2W']
-    #
-    # s = set(a) | set(c)
-    # print(len(s), len(b),len(b.intersection(s)))

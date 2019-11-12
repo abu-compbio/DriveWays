@@ -35,7 +35,7 @@ class graph():
                     self.graph[dst].append(src)
                 else:
                     self.graph[dst]= [src]
-                    
+
     def getIDs(self,src, dst):
         if src in list(self.gene2id.keys()):
             src = self.gene2id[src]
@@ -57,10 +57,6 @@ class graph():
         print('There are {} nodes, {} edges'.format(self.num_nodes, self.num_edges))
 
 if __name__ == '__main__':
-
-    g = graph('hintedge_new.txt')
-
+    PPI_file = '../../data/intAct_PPI.txt'
+    g = graph(PPI_file)
     g.summary()
-
-    print('Genes {}, Nodes {}'.format(len(g.genes),len(g.graph.keys())))
-    print('{} \n{}'.format(list(g.genes)[:10], list(g.graph.keys())[:10]))
