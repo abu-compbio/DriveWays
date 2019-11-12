@@ -16,8 +16,8 @@ pip install -r requirements.txt
 The file is located at data/intAct_PPI.txt
 
 ```
-g_i g_j confidence value
-MDM2 TP53	0.99
+$g_i$ $g_j$ confidence value
+MDM2  TP53	0.99
 APP	APP	0.99
 MYC	MAX	0.98
 ...
@@ -66,4 +66,4 @@ To run OLDRIM on the given input file, run the following script
 cd src
 python oldrim.py
 ```
-**config.py** contains different parameters for the paths and the functions used for scoring
+`src/config.py` contains different parameters for the paths and the functions used for scoring
