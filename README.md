@@ -1,6 +1,6 @@
-# OLDRIM: A Method for Overlapping Driver Module Identification in Cancer
+# DriveWays: A Method for Overlapping Driver Module Identification in Cancer
 
-### This is the original repository for the OLDRIM paper
+### This is the original repository for the DriveWays paper
 
 
 **Installing the dependencies**
@@ -25,7 +25,9 @@ MYC MAX 0.98
 Note: this network contains the edges with confidence value > 0.35
 
 2. Mutation data
+
 The file contains the list of mutated genes. Each line consists of a gene and the list of patients where that gene is mutated
+
 The file is located at data/gene_patients.txt
 
 ```
@@ -60,10 +62,10 @@ the mutation data, and the output files path
 
 ## **Run**
 
-To run OLDRIM on the given input files:
+To run DriveWays on the given input files:
 
 ```
 cd src
-python oldrim.py
+python driveways.py
 ```
-`src/config.py` contains different parameters for the inout files path and the functions used for scoring
+`src/config.py` contains different parameters for the input files paths and the functions used for scoring

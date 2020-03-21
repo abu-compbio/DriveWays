@@ -10,7 +10,7 @@ class BasicStartegy ():
         self.Process_seed = Process_seed
 
 
-    # an abstract class, that can be overriden
+    # an abstract calss, that can be overriden
     # the details of the growing a module should be implemented in this function
     def __call__(self, current_module,externel_nodes, usednodes,prev_modules, fnc=None):
         pass

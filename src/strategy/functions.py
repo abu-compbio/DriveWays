@@ -7,20 +7,24 @@ def cov_over_mutex(module, t=None):
     return np.float128(module.cov)/ np.float128(module.mutex) if t== None else (np.float128(module.cov)/ np.float128(module.mutex))*np.float128(t)
 
 def cov(module, t=None):
-    return np.float128(module.cov) if t== None else np.float128(module.cov)/np.float128(t)
+    return np.float128(module.cov) if t== None else np.float128(module.cov)*np.float128(t)
+
+def mutex(module, t=None):
+    return np.float128(1) if t== None else np.float128(module.mutex)/np.float128(t)
 
 def cov_mutx(module, t=None):
     return np.float128(module.cov)* np.float128(module.mutex) if t== None else (np.float128(module.cov)* np.float128(module.mutex))*np.float128(t)
 
 def cov_cov_mutex(module, t=None):
     # This is similar to the buggy implementation in java, discovered on 08/02/2019
-    # Not needed most probably
+    
     return np.float128(module.cov)/ np.float128(module.mutex)  if t== None else np.float128(module.cov)/np.float128(t)
 
 
 fncs = {
         'cov/mutex': cov_over_mutex,
         'cov': cov,
+        'mutex':mutex,
         'cov*mutex': cov_mutx,
         'cov>cov/mutex': cov_cov_mutex
 }

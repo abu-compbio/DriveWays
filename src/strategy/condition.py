@@ -1,6 +1,6 @@
-# This is the class that contains the condition for considering a node (gene) for adding or removing
+# This is a class that contains the conidtion for considering a node (gene) for adding or removing
 # it has a function condition returns True or False
-# it has a set_condition function
+# it has a set_condition finction
 from .functions import *
 import numpy as np
 
@@ -25,7 +25,8 @@ class Condition():
     def value(self,current_module):
         self._condition  = self.function(current_module)
 
-
+    def get_condition_function():
+        return self.function
     def __call__(self, considered_module,threshold=None, fnc =None):
         if not threshold == None:
             self.threshold = threshold
@@ -33,4 +34,5 @@ class Condition():
         if fnc:
             return fnc(considered_module, self.threshold) > self._condition
         else:
+            # print(self.function.__str__)
             return self.function(considered_module, self.threshold) > self._condition
