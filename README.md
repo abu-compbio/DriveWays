@@ -1,4 +1,4 @@
-# DriveWays: A Method for Overlapping Driver Module Identification in Cancer
+# DriveWays: A Method for Identifying Possibly Overlapping Driver Pathways in Cancer
 
 ### This is the original repository for the DriveWays paper
 
