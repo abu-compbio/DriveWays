@@ -27,8 +27,6 @@ class SeedGenerater():
         nodes = [n for n in nodes if self.MexCov.get_mutation_perc(n) > 0.01]
         scores = [self.MexCov.get_score(n) for n in nodes]
         sorted_scores_ids = np.argsort(scores)[::-1]
-        sorted_scores = np.array(scores)[sorted_scores_ids]
-        # print(sorted_scores[:20])
         sorted_seeds = np.array(nodes)[sorted_scores_ids]
 
         return sorted_seeds
@@ -51,17 +49,8 @@ class SeedGenerater():
 
 
 if __name__ == '__main__':
-    # generator = SeedGenerater('../../data/intActedge_threshold_35.txt', '../../data/gene_patient_update.txt', '\t')
-    generator = SeedGenerater('../../data/intActedge_threshold_35_BRCA.txt', '../../data/gene_patient_BRCA.txt', '\t')
+    generator = SeedGenerater('../../data/intAct_PPI.txt', '../../data/gene_patients.txt', '\t')
     print(f'# patients= {generator.MexCov.num_patients}, threshold= {generator.MexCov.num_patients*0.01}')
-    print(generator.MexCov.summary())
     seeds = generator.seeds
     print(f'Number of seeds= {len(seeds)}')
-    generator.write_seeds('intAct_seeds_new.txt')
-    generator.write_seeds('intAct_seeds_BRCA_new.txt')
-
-    # randomized_lists = generator.random_sort(100)
-    # for i in range(100):
-    #     with open(f'../../data/random_seeds/intAct_seeds_threshold_35_{i}.txt', 'w') as f:
-    #         for s in randomized_lists[i]:
-    #             f.write(s+'\n')
+    generator.write_seeds('intAct_seeds.txt')

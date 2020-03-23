@@ -2,7 +2,7 @@
 #and follow a startegy to grow a module
 
 from strategy.condition import Condition
-from strategy.NoOverlap import NoOverlapStrategy
+from strategy.Overlap import OverlapStrategy
 from strategy.functions import *
 from strategy import *
 from  config import *
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     condition = Condition(threshold=0.9)
     score = cov
-    strategy = NoOverlapStrategy(condition, score)
+    strategy = OverlapStrategy(condition, score)
     process = GrowthProcess(G,covmex,'TP53INP1', usednodes, strategy)
     result = process.grow()
 
