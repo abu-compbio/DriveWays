@@ -69,3 +69,8 @@ cd src
 python driveways.py
 ```
 `src/config.py` contains different parameters for the input files paths and the functions used for scoring
+
+
+## **Evlauation**
+
+ODMSS and MMR evaluations included in the paper can be found in `src/Evaluation.ipynb`

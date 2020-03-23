@@ -6,3 +6,4 @@ matplotlib
 pylab
 networkx
 scipy
+scikit-optimize
