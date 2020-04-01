@@ -92,7 +92,7 @@ class CovMex():
 if __name__ == '__main__':
     from graph import Graph
     PPI_file = '../data/intAct_PPI.txt'
-    mutation_data_file = '../data/gene_patients.txt'
+    mutation_data_file = '../data/gene_patients_Pan-cancer.txt'
     g = Graph(PPI_file)
     m = CovMex(mutation_data_file, g)
     m.summary()

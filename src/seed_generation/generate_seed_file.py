@@ -49,7 +49,7 @@ class SeedGenerater():
 
 
 if __name__ == '__main__':
-    generator = SeedGenerater('../../data/intAct_PPI.txt', '../../data/gene_patients.txt', '\t')
+    generator = SeedGenerater('../../data/intAct_PPI.txt', '../../data/gene_patients_Pan-cancer.txt', '\t')
     print(f'# patients= {generator.MexCov.num_patients}, threshold= {generator.MexCov.num_patients*0.01}')
     seeds = generator.seeds
     print(f'Number of seeds= {len(seeds)}')

@@ -1,7 +1,7 @@
 from strategy.functions import *
 
 graph_file = '../data/intAct_PPI.txt'
-gene_patient_file = '../data/gene_patients.txt'
+gene_patient_file = '../data/gene_patients_Pan-cancer.txt'
 seed_file = '../data/intAct_seeds.txt'
 condition_type = 'cov>cov/mutex'
 score_function_type = 'cov*mutex'

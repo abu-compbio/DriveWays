@@ -53,7 +53,7 @@ class GrowthProcess():
 
 if __name__ == '__main__':
     PPI_file = '../data/intAct_PPI.txt'
-    mutation_data_file = '../data/gene_patients.txt'
+    mutation_data_file = '../data/gene_patients_Pan-cancer.txt'
     G = Graph(PPI_file)
     covmex = CovMex(mutation_data_file, g)
     # This is a toy example to check that the growth process is properly implemented

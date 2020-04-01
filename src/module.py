@@ -106,7 +106,7 @@ class Module():
 
 
 if __name__ == '__main__':
-    mutation_data_file = '../data/gene_patients.txt'
+    mutation_data_file = '../data/gene_patients_Pan-cancer.txt'
     covmex_ = CovMex(mutation_data_file)
     covmex_.summary()
 
