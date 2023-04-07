@@ -85,11 +85,8 @@ class OverlapStrategy(BasicStartegy):
             else:
                 range_ = list(range(100,MAX_GENES+100, 100))
             max_total = sum([len(s) for s in modules])
-            ODMSSs = []
             for n in range_:
                 if n > max_total:
-                    avg_size = sum([len(m) for m in modules])/len(modules)
-                    avg_sizes.append(avg_size)
                     tmp = []
                     continue
                 tmp = []
